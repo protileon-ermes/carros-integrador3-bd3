@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button class="ss" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do carro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-toggle (ionChange)="habilitar()" color="medium">Habilitar Edição</ion-toggle>
+  <ion-item>
+    <ion-button expand="block" class="btn-salvar" shape="round" [disabled]="!edicao">
+      <input type="file" (change)="uploadFile($event.target)"/>
+    </ion-button>
+  </ion-item>
+    <app-items [carros]="carros" [edicao]="edicao" (carrosChange)="salvar($event)"></app-items>
+    <ion-button expand="block" (click)="showConfirm()" color="danger" [disabled]="!edicao">Excluir</ion-button>
+</ion-content>
+
+

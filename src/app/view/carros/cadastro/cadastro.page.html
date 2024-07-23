@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button class="ss" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Carro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  <ion-item lines="none">
+    <ion-button  expand="block" class="btn-salvar" shape="round">
+      <input type="file" (change)="uploadFile($event.target)"/>
+    </ion-button>
+  </ion-item>
+
+  <app-items-cadastrar (form)="cadastrar($event)" ></app-items-cadastrar>
+
+</ion-content>
+ 
+  
